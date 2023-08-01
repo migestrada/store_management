@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= root_url %>">StoreManagement</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+
+    <div class="collapse navbar-collapse" id="navBar">
+      <div class="navbar-nav">
+        <a class="nav-link <%= 'active' if controller_name == 'dashboard' %>" aria-current="page" href="<%= root_url %>">Home</a>
+        <a class="nav-link <%= 'active' if controller_name == 'products' %>" aria-current="page" href="<%= products_path %>">Products</a>
+      </div>
+    </div>
+  </div>
+</nav>

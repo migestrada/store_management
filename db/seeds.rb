@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+
+if User.all.empty?
+  User.create(email: 'admin@admin.cl', password: '123lol123')
+end
+
+if Product.all.empty?
+  (0..10).each do |i|
+    Product.create(name: "Product #{ i }", code: "CODE#{ i }", price: i * 100 )
+  end
+end

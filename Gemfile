@@ -77,3 +77,4 @@ gem 'devise', '~> 4.9', '>= 4.9.2'
 gem "bootstrap"
 
 gem "sassc-rails"
+gem "rubocop" # TODO: Configure rubocop

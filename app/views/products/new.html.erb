@@ -1,0 +1,36 @@
+<div class="d-flex flex-column h-100-vh align-items-center justify-content-center">
+  <%= form_with model: @product do |f| %>
+    <h4 class="text-center">
+      <%= @product.id.nil? ? 'New Product' : "Edit #{ @product.name }" %>
+    </h4>
+
+    <div class="form-group">
+      <%= f.label :name, class: 'form-label' %>
+      <%= f.text_field :name, class: "form-control #{ 'is-invalid' unless @product.errors['name'].blank? }" %>
+      <div class="error text-danger">
+        <%= @product.errors['name'].join(',') %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :code, class: 'form-label' %>
+      <%= f.text_field :code, class: "form-control #{ 'is-invalid' unless @product.errors['code'].blank? }" %>
+      <div class="error text-danger">
+        <%= @product.errors['code'].join(',') %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, class: 'form-label' %>
+      <%= f.number_field :price, class: "form-control #{ 'is-invalid' unless @product.errors['price'].blank? }" %>
+      <div class="error text-danger">
+        <%= @product.errors['price'].join(',') %>
+      </div>
+    </div>
+
+    <div class="form-group d-grid gap-2">
+      <%= f.submit 'Save', class: 'btn btn-primary'%>
+      <%= link_to 'Cancel', products_path, class: 'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>
