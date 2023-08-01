@@ -1,0 +1,8 @@
+<tr id="<%= warehouse.id %>">
+  <td><%= warehouse.name.titleize %></td>
+  <td><%= warehouse.code.upcase %></td>
+  <td>
+    <%= link_to 'Edit', edit_warehouse_path(warehouse.id), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', warehouse_path(warehouse.id), class: 'btn btn-danger', data: { turbo_method: :delete }%>
+  </td>
+</tr>
